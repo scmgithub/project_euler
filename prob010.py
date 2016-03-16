@@ -10,7 +10,7 @@ top = 2000000
 sum = 0
 
 def isprime(n):
-  if n==1:
+  if n<=1:
     return False
   if n<4:
     return True
