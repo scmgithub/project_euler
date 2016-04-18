@@ -10,14 +10,18 @@
 
 from sys import exit
 
-total = 1000
+perimeter = 1000
 
-for a in range(1,total+1):
-  for b in range (1,total+1-a):
-    for c in range (1,total+1-a-b):
-#      print "%d %d %d" % (a, b, c)
-      if (a + b + c == total):
-        if (a**2 + b**2 == c**2):
-          print "%d %d %d" % (a, b, c)
-          print "product: %d" % (a*b*c)
-          exit(0)
+#  Brute force
+# for a in range(1,perimeter+1):
+#   for b in range (1,perimeter-a+1):
+
+# Smarter, considering that a < b < c and a < perimeter/3 and a < b < perimeter/2
+
+for a in range(1,(perimeter/3)+1):
+  for b in range(a, (perimeter/2)+1):
+    c = perimeter - a - b
+    if (a**2 + b**2 == c**2):
+      print "%d %d %d" % (a, b, c)
+      print "product: %d" % (a*b*c)
+      exit(0)
