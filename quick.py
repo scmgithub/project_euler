@@ -1,5 +1,28 @@
 #  Scratch file for code snippets and random tests.
 
+import itertools
+
+for l in range(1,5):
+  for x in itertools.permutations([i for i in range(1,l+1)],l):
+    print int(''.join(map(str,list(x))))
+
+exit()
+
+for i in itertools.count(5,100):
+  print i
+  if i > 500:
+    break
+
+# exit()
+
+def defaults(x = 5, y = 7):
+  print "x is",x
+  print "y is",y
+
+defaults(10,20)
+defaults(15)
+defaults()
+
 import math
 # for x in [2,5,10,48,49]:
 #   print x, math.sqrt(x), math.floor(math.sqrt(x))
