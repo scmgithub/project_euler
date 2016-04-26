@@ -71,3 +71,12 @@ def isprime(n):
 print "197", isprime(197)
 print "179", isprime(179)
 print "917", isprime(917)
+
+
+def ispandigital(n):
+  return [str(i) for i in range(1,len(str(n))+1)] == sorted(str(n))
+
+def ispandigitalprime(n):
+  return ispandigital(n) and isprime(n)
+
+assert ispandigitalprime(2143)

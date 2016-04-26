@@ -9,6 +9,9 @@
 
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
+
+#  This implementation is super-slow.  Not recommended.
+
 print "Finding abundant numbers..."
 limit = 28123
 abundants = []
@@ -32,17 +35,7 @@ for x in range(1,limit+1):
     # print "PERFECT"
     perfects.append(x)
 
-# print "abundants:"
-# print abundants
-
-# print "PERFECTS:"
-# print perfects
-
-# print "deficients:"
-# print deficients
-
 dont_add_sum = 0
-no_sums = []
 
 for candidate in range(1,limit+1):
   dumflag = 0
@@ -61,7 +54,6 @@ for candidate in range(1,limit+1):
   else:
     print candidate,"is not any sum - adding to result"
     dont_add_sum += candidate
-    no_sums.append(candidate)
 
 print "The sum of positive integers that cannot be written as the sum of two abundant numbers is %d." % (dont_add_sum)
 
